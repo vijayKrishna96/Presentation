@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Archive</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+</head>
+<body x-data="{ page: 'archive', 'loaded': true, 'modalNewsletter': false, 'modalSearch': false, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }">
+    <!-- Preloader -->
+    <div x-show="loaded" x-init="window.addEventListener('DOMContentLoaded', () => {setTimeout(() => loaded = false, 500)})" class="preloader">
+        <div class="spinner"></div>
+    </div>
+<header>
+      <nav class="navbar">
+        <div class="logo"><i class="fas fa-compass"></i> Clarity</div>
+
+        <div class="nav-links">
+          <div class="nav-item">
+            <a href="#"
+              >Home <i class="fas fa-chevron-down" style="font-size: 10px"></i
+            ></a>
+            <div class="dropdown">
+              <a href="../index.html">Business Blog</a>
+              <a href="../PersonalBlog/personalBlog.html">Personal Blog</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="#"
+              >Pages <i class="fas fa-chevron-down" style="font-size: 10px"></i
+            ></a>
+            <div class="dropdown">
+              <a href="../CategoryPage/category.html">Category Page</a>
+              <a href="../About/about.html">About Us</a>
+              <a href="../AuthorPage/author.html">Author Page</a>
+              <a href="../Search/search.html">Search Page</a>
+              <a href="../SignIn/signIn.html">Sign In</a>
+              <a href="../CategoryPage/category.html">Category Page</a>
+              <a href="../Styleguide/styleguide.html">Style Guide Page</a>
+              <a href="../PrivacyPolicy/privacyPolicy.html">Privacy Policy</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="#"
+              >Blogs <i class="fas fa-chevron-down" style="font-size: 10px"></i
+            ></a>
+            <div class="dropdown">
+              <a href="../BlogPageone/blogOne.html">Blog Details one</a>
+              <a href="../BlogPagetwo/blogtwo.html">Blog Details two</a>
+              <a href="../BlogPagethree/blogthree.html">Blog Details three</a>
+              <a href="../BlogArchivePage/archieve.html">Blog Archives</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="#">Support</a>
+          </div>
+        </div>
+
+        <div class="icons">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-linkedin-in"></i>
+          <i class="fab fa-pinterest-p"></i>
+          <i class="fas fa-search search-icon"></i>
+          <button class="subscribe-btn">Subscribe</button>
+        </div>
+      </nav>
+    </header>
+    <main>
+        <!-- Blog Archive Section -->
+        <section class="blog-archive-section">
+            <div class="container">
+                <div class="blog-archive-title">
+                    <h1>Archive</h1>
+                    <p>See all posts we have ever written.</p>
+                </div>
+
+                <div class="blog-grid">
+                    <!-- Blog Item 1 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://clarity-tailwind.preview.uideck.com/images/blog-01.png" alt="Stylish Kitchen And Dining Room">
+                        </div>
+                        <h4>
+                            <a href="#">
+                                <span class="title-highlight">Stylish Kitchen And Dining Room With Functional Ideas</span>
+                            </a>
+                        </h4>
+                        <p>Lorem Ipsum is simply dummy text of the print and typesetting industry...</p>
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-details">
+                                    <img src="	https://clarity-tailwind.preview.uideck.com/images/user-01.png" alt="Adrio Devid">
+                                    <span>Adrio Devid</span>
+                                </div>
+                                <span class="separator"></span>
+                                <span class="date">Sep 10, 2025</span>
+                            </div>
+                            <span class="badge badge-technology">Technology</span>
+                        </div>
+                    </article>
+
+                    <!-- Blog Item 2 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://clarity-tailwind.preview.uideck.com/images/blog-10.png" alt="Stylish Kitchen And Dining Room">
+                        </div>
+                        <h4>
+                            <a href="#">
+                                <span class="title-highlight">Stylish Kitchen And Dining Room With Functional Ideas</span>
+                            </a>
+                        </h4>
+                        <p>Lorem Ipsum is simply dummy text of the print and typesetting industry...</p>
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-details">
+                                    <img src="	https://clarity-tailwind.preview.uideck.com/images/user-01.png" alt="Adrio Devid">
+                                    <span>Adrio Devid</span>
+                                </div>
+                                <span class="separator"></span>
+                                <span class="date">Sep 10, 2025</span>
+                            </div>
+                            <span class="badge badge-culture">Culture</span>
+                        </div>
+                    </article>
+
+                    <!-- Blog Item 3 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://clarity-tailwind.preview.uideck.com/images/blog-05.png" alt="Stylish Kitchen And Dining Room">
+                        </div>
+                        <h4>
+                            <a href="#">
+                                <span class="title-highlight">Stylish Kitchen And Dining Room With Functional Ideas</span>
+                            </a>
+                        </h4>
+                        <p>Lorem Ipsum is simply dummy text of the print and typesetting industry...</p>
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-details">
+                                    <img src="	https://clarity-tailwind.preview.uideck.com/images/user-01.png" alt="Adrio Devid">
+                                    <span>Adrio Devid</span>
+                                </div>
+                                <span class="separator"></span>
+                                <span class="date">Sep 10, 2025</span>
+                            </div>
+                            <span class="badge badge-travel">Travel</span>
+                        </div>
+                    </article>
+
+                    <!-- Blog Item 4 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="	https://clarity-tailwind.preview.uideck.com/images/blog-09.png" alt="Stylish Kitchen And Dining Room">
+                        </div>
+                        <h4>
+                            <a href="#">
+                                <span class="title-highlight">Stylish Kitchen And Dining Room With Functional Ideas</span>
+                            </a>
+                        </h4>
+                        <p>Lorem Ipsum is simply dummy text of the print and typesetting industry...</p>
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-details">
+                                    <img src="	https://clarity-tailwind.preview.uideck.com/images/user-01.png" alt="Adrio Devid">
+                                    <span>Adrio Devid</span>
+                                </div>
+                                <span class="separator"></span>
+                                <span class="date">Sep 10, 2025</span>
+                            </div>
+                            <span class="badge badge-health">Health</span>
+                        </div>
+                    </article>
+
+                    <!-- Blog Item 5 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://clarity-tailwind.preview.uideck.com/images/blog-02.png" alt="Stylish Kitchen And Dining Room">
+                        </div>
+                        <h4>
+                            <a href="#">
+                                <span class="title-highlight">Stylish Kitchen And Dining Room With Functional Ideas</span>
+                            </a>
+                        </h4>
+                        <p>Lorem Ipsum is simply dummy text of the print and typesetting industry...</p>
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-details">
+                                    <img src="	https://clarity-tailwind.preview.uideck.com/images/user-01.png" alt="Adrio Devid">
+                                    <span>Adrio Devid</span>
+                                </div>
+                                <span class="separator"></span>
+                                <span class="date">Sep 10, 2025</span>
+                            </div>
+                            <span class="badge badge-technology">Technology</span>
+                        </div>
+                    </article>
+
+                    <!-- Blog Item 6 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://clarity-tailwind.preview.uideck.com/images/blog-06.png" alt="Stylish Kitchen And Dining Room">
+                        </div>
+                        <h4>
+                            <a href="#">
+                                <span class="title-highlight">Stylish Kitchen And Dining Room With Functional Ideas</span>
+                            </a>
+                        </h4>
+                        <p>Lorem Ipsum is simply dummy text of the print and typesetting industry...</p>
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-details">
+                                    <img src="	https://clarity-tailwind.preview.uideck.com/images/user-01.png" alt="Adrio Devid">
+                                    <span>Adrio Devid</span>
+                                </div>
+                                <span class="separator"></span>
+                                <span class="date">Sep 10, 2025</span>
+                            </div>
+                            <span class="badge badge-travel">Travel</span>
+                        </div>
+                    </article>
+
+                    <!-- Blog Item 7 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://clarity-tailwind.preview.uideck.com/images/blog-11.png" alt="Stylish Kitchen And Dining Room">
+                        </div>
+                        <h4>
+                            <a href="#">
+                                <span class="title-highlight">Stylish Kitchen And Dining Room With Functional Ideas</span>
+                            </a>
+                        </h4>
+                        <p>Lorem Ipsum is simply dummy text of the print and typesetting industry...</p>
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-details">
+                                    <img src="	https://clarity-tailwind.preview.uideck.com/images/user-01.png" alt="Adrio Devid">
+                                    <span>Adrio Devid</span>
+                                </div>
+                                <span class="separator"></span>
+                                <span class="date">Sep 10, 2025</span>
+                            </div>
+                            <span class="badge badge-culture">Culture</span>
+                        </div>
+                    </article>
+
+                    <!-- Blog Item 8 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://clarity-tailwind.preview.uideck.com/images/blog-07.png" alt="Stylish Kitchen And Dining Room">
+                        </div>
+                        <h4>
+                            <a href="#">
+                                <span class="title-highlight">Stylish Kitchen And Dining Room With Functional Ideas</span>
+                            </a>
+                        </h4>
+                        <p>Lorem Ipsum is simply dummy text of the print and typesetting industry...</p>
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-details">
+                                    <img src="	https://clarity-tailwind.preview.uideck.com/images/user-01.png" alt="Adrio Devid">
+                                    <span>Adrio Devid</span>
+                                </div>
+                                <span class="separator"></span>
+                                <span class="date">Sep 10, 2025</span>
+                            </div>
+                            <span class="badge badge-travel">Travel</span>
+                        </div>
+                    </article>
+
+                    <!-- Blog Item 9 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://clarity-tailwind.preview.uideck.com/images/blog-04.png" alt="Stylish Kitchen And Dining Room">
+                        </div>
+                        <h4>
+                            <a href="#">
+                                <span class="title-highlight">Stylish Kitchen And Dining Room With Functional Ideas</span>
+                            </a>
+                        </h4>
+                        <p>Lorem Ipsum is simply dummy text of the print and typesetting industry...</p>
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-details">
+                                    <img src="	https://clarity-tailwind.preview.uideck.com/images/user-01.png" alt="Adrio Devid">
+                                    <span>Adrio Devid</span>
+                                </div>
+                                <span class="separator"></span>
+                                <span class="date">Sep 10, 2025</span>
+                            </div>
+                            <span class="badge badge-lifestyle">Lifestyle</span>
+                        </div>
+                    </article>
+
+                    <!-- Blog Item 10 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://clarity-tailwind.preview.uideck.com/images/blog-08.png" alt="Stylish Kitchen And Dining Room">
+                        </div>
+                        <h4>
+                            <a href="#">
+                                <span class="title-highlight">Stylish Kitchen And Dining Room With Functional Ideas</span>
+                            </a>
+                        </h4>
+                        <p>Lorem Ipsum is simply dummy text of the print and typesetting industry...</p>
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-details">
+                                    <img src="	https://clarity-tailwind.preview.uideck.com/images/user-01.png" alt="Adrio Devid">
+                                    <span>Adrio Devid</span>
+                                </div>
+                                <span class="separator"></span>
+                                <span class="date">Sep 10, 2025</span>
+                            </div>
+                            <span class="badge badge-travel">Travel</span>
+                        </div>
+                    </article>
+
+                    <!-- Blog Item 11 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://clarity-tailwind.preview.uideck.com/images/blog-03.png" alt="Stylish Kitchen And Dining Room">
+                        </div>
+                        <h4>
+                            <a href="#">
+                                <span class="title-highlight">Stylish Kitchen And Dining Room With Functional Ideas</span>
+                            </a>
+                        </h4>
+                        <p>Lorem Ipsum is simply dummy text of the print and typesetting industry...</p>
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-details">
+                                    <img src="	https://clarity-tailwind.preview.uideck.com/images/user-01.png" alt="Adrio Devid">
+                                    <span>Adrio Devid</span>
+                                </div>
+                                <span class="separator"></span>
+                                <span class="date">Sep 10, 2025</span>
+                            </div>
+                            <span class="badge badge-technology">Technology</span>
+                        </div>
+                    </article>
+
+                    <!-- Blog Item 12 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="	https://clarity-tailwind.preview.uideck.com/images/blog-12.png" alt="Stylish Kitchen And Dining Room">
+                        </div>
+                        <h4>
+                            <a href="#">
+                                <span class="title-highlight">Stylish Kitchen And Dining Room With Functional Ideas</span>
+                            </a>
+                        </h4>
+                        <p>Lorem Ipsum is simply dummy text of the print and typesetting industry...</p>
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-details">
+                                    <img src="	https://clarity-tailwind.preview.uideck.com/images/user-01.png" alt="Adrio Devid">
+                                    <span>Adrio Devid</span>
+                                </div>
+                                <span class="separator"></span>
+                                <span class="date">Sep 10, 2025</span>
+                            </div>
+                            <span class="badge badge-culture">Culture</span>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination-wrapper">
+                    <div class="pagination">
+                        <button class="pagination-btn">Previous</button>
+                        <button class="pagination-btn">1</button>
+                        <button class="pagination-btn">2</button>
+                        <button class="pagination-btn">3</button>
+                        <button class="pagination-btn">4</button>
+                        <button class="pagination-btn">Next</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Newsletter Modal -->
+    <div x-show="modalNewsletter" class="modal-overlay">
+        <div x-show="modalNewsletter" x-transition @click.outside="modalNewsletter = false" class="modal newsletter-modal">
+            <button @click="modalNewsletter = false" class="modal-close">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.22505 1.22474C1.46912 0.980668 1.86486 0.980668 2.10893 1.22474L10.0003 9.1161L17.8917 1.22474C18.1358 0.980668 18.5315 0.980668 18.7756 1.22474C19.0197 1.46882 19.0197 1.86455 18.7756 2.10863L10.8842 10L18.7756 17.8914C19.0197 18.1355 19.0197 18.5312 18.7756 18.7753C18.5315 19.0194 18.1358 19.0194 17.8917 18.7753L10.0003 10.8839L2.10893 18.7753C1.86486 19.0194 1.46912 19.0194 1.22505 18.7753C0.980973 18.5312 0.980973 18.1355 1.22505 17.8914L9.11641 10L1.22505 2.10863C0.980973 1.86455 0.980973 1.46882 1.22505 1.22474Z" fill="currentColor"/>
+                </svg>
+            </button>
+            <h3>Newsletter</h3>
+            <p>Subscribe to my newsletter to get updated posts</p>
+            <form class="newsletter-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+                <button type="submit" class="submit-btn">Subscribe</button>
+                <p class="disclaimer">Don't worry, I don't spam</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Search Modal -->
+    <div x-show="modalSearch" class="modal-overlay">
+        <div x-show="modalSearch" x-transition @click.outside="modalSearch = false" class="modal search-modal">
+            <form class="search-form">
+                <div class="search-input-wrapper">
+                    <button type="button" class="search-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.1875 17.4063L14.0313 13.2188C16.1563 10.3125 15.9375 6.15625 13.2813 3.53125C11.875 2.125 10 1.34375 8 1.34375C6 1.34375 4.125 2.125 2.71875 3.53125C-0.1875 6.4375 -0.1875 11.1875 2.71875 14.0938C4.125 15.5 6 16.2813 8 16.2813C9.90625 16.2813 11.6875 15.5625 13.0938 14.2813L18.3125 18.5C18.4375 18.5938 18.5938 18.6563 18.75 18.6563C18.9688 18.6563 19.1563 18.5625 19.2813 18.4063C19.5313 18.0938 19.5 17.6563 19.1875 17.4063ZM8 14.875C6.375 14.875 4.875 14.25 3.71875 13.0938C1.34375 10.7188 1.34375 6.875 3.71875 4.53125C4.875 3.375 6.375 2.75 8 2.75C9.625 2.75 11.125 3.375 12.2813 4.53125C14.6563 6.90625 14.6563 10.75 12.2813 13.0938C11.1563 14.25 9.625 14.875 8 14.875Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                    <input type="search" placeholder="Search posts, tags and authors" class="search-input">
+                    <button @click="modalSearch = false" type="button" class="modal-close search-close">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.7001 6.99998L13.0376 1.66248C13.2345 1.4656 13.2345 1.15935 13.0376 0.962476C12.8407 0.765601 12.5345 0.765601 12.3376 0.962476L7.0001 6.29998L1.6626 0.962476C1.46572 0.765601 1.15947 0.765601 0.962598 0.962476C0.765723 1.15935 0.765723 1.4656 0.962598 1.66248L6.3001 6.99998L0.962598 12.3375C0.765723 12.5344 0.765723 12.8406 0.962598 13.0375C1.0501 13.125 1.18135 13.1906 1.3126 13.1906C1.44385 13.1906 1.5751 13.1469 1.6626 13.0375L7.0001 7.69998L12.3376 13.0375C12.4251 13.125 12.5563 13.1906 12.6876 13.1906C12.8188 13.1906 12.9501 13.1469 13.0376 13.0375C13.2345 12.8406 13.2345 12.5344 13.0376 12.3375L7.7001 6.99998Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+            <div class="search-section-header">
+                <h5>Posts</h5>
+            </div>
+            <div class="search-results">
+                <div class="search-result-item">
+                    <h6>Writing and managing content in Clarity, an advanced guide</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
+                </div>
+                <div class="search-result-item">
+                    <h6>Writing and managing content in Clarity, an advanced guide</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
+                </div>
+                <div class="search-result-item">
+                    <h6>Writing and managing content in Clarity, an advanced guide</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
+                </div>
+                <div class="search-result-item">
+                    <h6>Writing and managing content in Clarity, an advanced guide</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button 
+        class="back-to-top" 
+        @click="window.scrollTo({top: 0, behavior: 'smooth'})" 
+        @scroll.window="scrollTop = (window.pageYOffset > 50) ? true : false" 
+        :class="{ 'visible': scrollTop }">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/>
+        </svg>
+    </button>
+    <footer>
+      <div class="footer-left">
+        <p>&copy; 2025 Clarity. All rights reserved</p>
+      </div>
+
+      <div class="footer-center">
+        <a href="#">Privacy</a>
+        <span>•</span>
+        <a href="#">Terms</a>
+        <span>•</span>
+        <a href="#">Contact</a>
+        <span>•</span>
+        <a href="#">Contribute</a>
+      </div>
+
+      <div class="footer-right">
+        <span>Follow Us:</span>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-pinterest"></i></a>
+      </div>
+    </footer>
+</body>
+</html>

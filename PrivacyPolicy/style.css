@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+strong {
+  color: black;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 24px;
+  color: #222;
+}
+
+.logo i {
+  color: #7b61ff;
+  margin-right: 8px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item > a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  padding: 8px;
+  display: inline-block;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  min-width: 150px;
+  display: none;
+  z-index: 1000;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px;
+  color: #444;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown a:hover {
+  background-color: #f9f9f9;
+}
+
+.nav-item:hover .dropdown {
+  display: block;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #666;
+  font-size: 18px;
+}
+
+.search-icon {
+  padding: 6px 8px;
+  border-radius: 50%;
+  background-color: #f3f3f3;
+  cursor: pointer;
+}
+
+.subscribe-btn {
+  background-color: #000;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.subscribe-btn:hover {
+  background-color: #333;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  flex-wrap: wrap;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-center {
+  gap: 8px;
+}
+
+.footer-center span {
+  color: #888;
+}
+
+footer a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #000;
+}
+
+.footer-right i {
+  font-size: 16px;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.footer-right i:hover {
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    justify-content: center;
+  }
+}

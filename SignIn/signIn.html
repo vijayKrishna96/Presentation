@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      /* Section padding and background */
+      .section-signin {
+        padding-top: 8.5rem; /* pt-34 approx */
+        padding-bottom: 3.75rem; /* pb-15 approx */
+        background-color: #f3f4f6; /* bg-gray (tailwind gray-100) */
+        font-family: "Arial", sans-serif;
+        color: #1f2937; /* text-dark */
+        min-height: 100vh;
+      }
+
+      /* Container */
+      .container {
+        max-width: 520px;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem; /* px-4 */
+        padding-right: 1rem;
+      }
+
+      /* Card */
+      .card {
+        background-color: white;
+        border-radius: 1rem; /* rounded-xl */
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        padding: 4rem; /* p-4 */
+      }
+
+      /* Header */
+      .header {
+        text-align: center;
+        margin-bottom: 2.25rem; /* mb-9 */
+      }
+
+      .header h1 {
+        font-weight: 700;
+        font-size: 1.875rem; /* text-heading-3 approx */
+        margin-bottom: 0.875rem;
+        color: #1f2937;
+      }
+
+      .header p {
+        font-size: 1rem; /* text-body */
+        color: #4b5563; /* gray-600 */
+      }
+
+      /* Buttons */
+      .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.625rem; /* gap-2.5 */
+        padding: 0.875rem; /* p-3.5 */
+        width: 100%;
+        border-radius: 0.5rem;
+        border: 1px solid #d1d5db; /* border-gray-4 */
+        background-color: white;
+        color: #1f2937;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease-in;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+      }
+
+      .btn:hover {
+        border-color: #9ca3af; /* border-gray-5 */
+        background-color: #e5e7eb; /* bg-gray-200 */
+      }
+
+      /* Google button with brand color */
+      .btn-google i {
+        color: #4285f4;
+      }
+
+      .btn-google:hover i {
+        color: #2a56c6;
+      }
+
+      /* Github button icon color */
+      .btn-github i {
+        color: #15171a;
+      }
+
+      .btn-github:hover i {
+        color: #000;
+      }
+
+      /* Divider text with lines */
+      .divider {
+        position: relative;
+        text-align: center;
+        font-size: 0.875rem; /* text-custom-sm */
+        color: #6b7280; /* gray-500 */
+        margin-top: 2.25rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .divider::before,
+      .divider::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 30%;
+        height: 1px;
+        background-color: #d1d5db; /* gray-300 */
+      }
+
+      .divider::before {
+        left: 0;
+        transform: translateY(-50%);
+      }
+
+      .divider::after {
+        right: 0;
+        transform: translateY(-50%);
+      }
+
+      /* Form groups */
+      .form-group {
+        margin-bottom: 1rem;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: 600;
+        color: #1f2937;
+        font-size: 0.875rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 0.875rem 1.5rem;
+        border: 1px solid #d1d5db;
+        border-radius: 0.375rem;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.2s ease-in, box-shadow 0.2s ease-in;
+        color: #111827;
+      }
+
+      .form-group input::placeholder {
+        color: #6b7280;
+      }
+
+      .form-group input:focus {
+        border-color: #374151; /* gray-700 */
+        box-shadow: 0 0 0 2px rgba(55, 65, 81, 0.2); /* shadow-input */
+      }
+
+      /* Form footer */
+      .form-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.875rem;
+      }
+
+      /* Checkbox label */
+      .checkbox-label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-weight: 600;
+        color: #1f2937;
+        font-size: 0.875rem;
+      }
+
+      .checkbox-label input[type="checkbox"] {
+        margin-right: 0.5rem;
+        width: 1.25rem;
+        height: 1.25rem;
+        cursor: pointer;
+      }
+
+      /* Forgot password */
+      .forgot-password {
+        color: #1f2937;
+        text-decoration: none;
+        font-size: 0.875rem;
+      }
+
+      .forgot-password:hover {
+        text-decoration: underline;
+      }
+
+      /* Submit button */
+      .btn-submit {
+        background-color: #1f2937;
+        color: white;
+        font-weight: 700;
+        padding: 0.875rem 1.25rem;
+        border: none;
+        border-radius: 0.375rem;
+        cursor: pointer;
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        transition: opacity 0.2s ease-in;
+      }
+
+      .btn-submit:hover {
+        opacity: 0.9;
+      }
+
+      /* Signup text */
+      .signup-text {
+        text-align: center;
+        margin-top: 1.25rem;
+        font-size: 0.875rem;
+        color: #1f2937;
+      }
+
+      .signup-text a {
+        color: #1f2937;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .signup-text a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo"><i class="fas fa-compass"></i> Clarity</div>
+
+        <div class="nav-links">
+          <div class="nav-item">
+            <a href="#"
+              >Home <i class="fas fa-chevron-down" style="font-size: 10px"></i
+            ></a>
+            <div class="dropdown">
+              <a href="../index.html">Business Blog</a>
+              <a href="../PersonalBlog/personalBlog.html">Personal Blog</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="#"
+              >Pages <i class="fas fa-chevron-down" style="font-size: 10px"></i
+            ></a>
+            <div class="dropdown">
+              <a href="../CategoryPage/category.html">Category Page</a>
+              <a href="../About/about.html">About Us</a>
+              <a href="../AuthorPage/author.html">Author Page</a>
+              <a href="../Search/search.html">Search Page</a>
+              <a href="../SignIn/signIn.html">Sign In</a>
+              <a href="../CategoryPage/category.html">Category Page</a>
+              <a href="../Styleguide/styleguide.html">Style Guide Page</a>
+              <a href="../PrivacyPolicy/privacyPolicy.html">Privacy Policy</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="#"
+              >Blogs <i class="fas fa-chevron-down" style="font-size: 10px"></i
+            ></a>
+            <div class="dropdown">
+              <a href="../BlogPageone/blogOne.html">Blog Details one</a>
+              <a href="../BlogPagetwo/blogtwo.html">Blog Details two</a>
+              <a href="../BlogPagethree/blogthree.html">Blog Details three</a>
+              <a href="../BlogArchivePage/archieve.html">Blog Archives</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="#">Support</a>
+          </div>
+        </div>
+
+        <div class="icons">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-linkedin-in"></i>
+          <i class="fab fa-pinterest-p"></i>
+          <i class="fas fa-search search-icon"></i>
+          <button class="subscribe-btn">Subscribe</button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="section-signin">
+        <div class="container">
+          <div class="card">
+            <div class="header">
+              <h1>Sign in</h1>
+              <p>Sign in to your account</p>
+            </div>
+
+            <button class="btn btn-google">
+              <i class="fab fa-google fa-lg"></i>
+              Sign in with Google
+            </button>
+
+            <button class="btn btn-github">
+              <i class="fab fa-github fa-lg"></i>
+              Sign in with Github
+            </button>
+
+            <span class="divider">Or sign in with email</span>
+
+            <form>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Confirm password"
+                  required
+                />
+              </div>
+
+              <div class="form-footer">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="remember" />
+                  Remember me
+                </label>
+                <a href="/#" class="forgot-password">Forgot Password?</a>
+              </div>
+
+              <button type="submit" class="btn btn-submit">Sign in</button>
+
+              <p class="signup-text">
+                Don't have an account?
+                <a href="signup.html">Sign Up for Free</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-left">
+        <p>&copy; 2025 Clarity. All rights reserved</p>
+      </div>
+
+      <div class="footer-center">
+        <a href="#">Privacy</a>
+        <span>•</span>
+        <a href="#">Terms</a>
+        <span>•</span>
+        <a href="#">Contact</a>
+        <span>•</span>
+        <a href="#">Contribute</a>
+      </div>
+
+      <div class="footer-right">
+        <span>Follow Us:</span>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-pinterest"></i></a>
+      </div>
+    </footer>
+  </body>
+</html>
